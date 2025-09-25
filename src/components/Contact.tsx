@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, MessageCircle, Calendar, MapPin } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const Contact = () => {
   const contactMethods = [
@@ -48,7 +49,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Contact Methods */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             {contactMethods.map((method, index) => (
@@ -71,6 +72,11 @@ const Contact = () => {
                 </div>
               </Card>
             ))}
+          </div>
+
+          {/* Contact Form */}
+          <div className="mb-12">
+            <ContactForm />
           </div>
 
           {/* CTA Section */}
