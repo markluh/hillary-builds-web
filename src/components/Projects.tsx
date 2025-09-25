@@ -5,25 +5,25 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Digital Marketing Platform",
-      description: "A comprehensive platform for managing digital marketing campaigns with advanced analytics and automation features.",
+      title: "M-LUHTECH LLC website",
+      description: "A comprehensive company website for M-LUHTECH LLC.",
       category: "Web Application",
       tags: ["Strategy", "UX Design", "Frontend"],
-      image: "bg-gradient-to-br from-primary/20 to-accent/20",
+      image: "./mluhtech.jpg",
       links: {
-        demo: "#",
-        github: "#"
+        demo: "m-luh.xyz",
+        github: "https://github.com/markluh/mluhtech-showcase-hub"
       }
     },
     {
-      title: "Brand Identity System",
-      description: "Complete brand identity design for a tech startup, including logo, typography, color palette, and brand guidelines.",
-      category: "Brand Design",
-      tags: ["Branding", "Design System", "Visual Identity"],
+      title: "meet-your-next online meeting platform",
+      description: "an online meeting website for scheduling meetings and interviews.",
+      category: "online meetings",
+      tags: ["online meetings", "Design System", "incomplete"],
       image: "bg-gradient-to-br from-accent/20 to-primary-glow/30",
       links: {
-        demo: "#",
-        github: null
+        demo: "meet.m-luh.xyz",
+        github: "https://github.com/markluh/meet-your-next/"
       }
     },
     {
