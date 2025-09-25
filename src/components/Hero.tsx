@@ -14,7 +14,7 @@ const Hero = () => {
           {/* Main Heading */}
           <div className="space-y-6 mb-8">
             <h1 className="text-5xl md:text-7xl font-heading font-semibold text-foreground">
-              Hillary <span className="text-primary">Mark</span>
+             Mark <span className="text-primary">Hillary </span>
             </h1>
             <div className="h-1 w-24 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-xl md:text-2xl text-muted-foreground font-light">
@@ -30,7 +30,7 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button variant="hero" size="lg" className="group">
+            <Button variant="hero" size="lg" href="#projects" className="group">
               View My Work
               <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
             </Button>
@@ -42,9 +42,9 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6">
             {[
-              { icon: Github, label: "GitHub", href: "#" },
+              { icon: Github, label: "GitHub", href: "github.com/markluh" },
               { icon: Linkedin, label: "LinkedIn", href: "#" },
-              { icon: Mail, label: "Email", href: "mailto:hillary@example.com" }
+              { icon: Mail, label: "Email", href: "mailto:hillarymarkluh@gmail.com" }
             ].map(({ icon: Icon, label, href }) => (
               <a
                 key={label}

@@ -21,7 +21,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <a href="#" className="font-heading font-semibold text-xl text-foreground">
-            Hillary <span className="text-primary">Mark</span>
+            Mark <span className="text-primary">Hillary</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -36,7 +36,7 @@ const Navigation = () => {
               </a>
             ))}
             <ThemeToggle />
-            <Button variant="outline" size="sm">
+            <Button variant="outline" href="#contact" size="sm">
               Get In Touch
             </Button>
           </div>
