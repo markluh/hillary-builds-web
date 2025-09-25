@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, MessageCircle, Calendar, MapPin } from "lucide-react";
+import { Phone, Mail, MessageCircle, Calendar, MapPin } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 const Contact = () => {
@@ -8,29 +8,29 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      description: "hillary.mark@example.com",
+      description: "hillarymarkluh@gmail.com",
       action: "Send Email",
-      href: "mailto:hillary.mark@example.com"
+      href: "mailto:hillarymarkluh@gmail.com"
     },
     {
       icon: MessageCircle,
       title: "Let's Chat",
       description: "Available for project discussions",
       action: "Start Conversation",
-      href: "#"
+      href: "mailto:hillarymarkluh@gmail.com"
     },
     {
       icon: Calendar,
       title: "Schedule Meeting",
       description: "Book a 30-minute consultation",
       action: "Book Now",
-      href: "#"
+      href: "mailto:hillarymarkluh@gmail.com"
     },
     {
-      icon: MapPin,
-      title: "Location",
-      description: "Available for remote collaboration",
-      action: "Learn More",
+      icon: Phone,
+      title: "contact information",
+      description: "+254 704455096, +254 798025897",
+      action: "whatsap",
       href: "#"
     }
   ];

@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { Send, CheckCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 // Contact form validation schema
 const contactSchema = z.object({
@@ -28,39 +29,36 @@ const contactSchema = z.object({
     .max(1000, { message: "Message must be less than 1000 characters" })
 });
 
-type ContactFormData = z.infer<typeof contactSchema>;
-
 const ContactForm = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: ""
   });
-  const [errors, setErrors] = useState<Partial<ContactFormData>>({});
+  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (field: keyof ContactFormData, value: string) => {
+  const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: undefined }));
     }
   };
 
-  const validateForm = (): boolean => {
+  const validateForm = () => {
     try {
       contactSchema.parse(formData);
       setErrors({});
       return true;
     } catch (error) {
       if (error instanceof z.ZodError) {
-        const fieldErrors: Partial<ContactFormData> = {};
+        const fieldErrors = {};
         error.errors.forEach((err) => {
           if (err.path[0]) {
-            fieldErrors[err.path[0] as keyof ContactFormData] = err.message;
+            fieldErrors[err.path[0]] = err.message;
           }
         });
         setErrors(fieldErrors);
@@ -69,9 +67,9 @@ const ContactForm = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       toast({
         title: "Validation Error",
@@ -84,18 +82,28 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission (in real app, this would call an API)
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
+      // ✅ Send email using EmailJS
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,   // Service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,  // Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY    // Public key
+      );
+
       setIsSubmitted(true);
       toast({
         title: "Message Sent!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
-      
-      // Reset form after successful submission
+
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
+      console.error("EmailJS Error:", error);
       toast({
         title: "Error",
         description: "There was an error sending your message. Please try again.",
