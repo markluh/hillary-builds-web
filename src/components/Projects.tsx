@@ -49,14 +49,14 @@ const Projects = () => {
       }
     },
     {
-      title: "Data Visualization Dashboard",
-      description: "Interactive dashboard for complex data visualization with real-time updates and customizable analytics views.",
+      title: "Bizpulse Dashboard",
+      description: "Interactive dashboard for financial management.",
       category: "Web Application",
       tags: ["Data Viz", "Dashboard", "Analytics"],
       image: "bg-gradient-to-br from-primary/25 to-accent-soft/30",
       links: {
-        demo: "#",
-        github: "#"
+        demo: null,
+        github: "https://github.com/markluh/bizpulse-dashboard"
       }
     },
     {

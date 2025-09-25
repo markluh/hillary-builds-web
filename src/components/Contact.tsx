@@ -30,8 +30,8 @@ const Contact = () => {
       icon: Phone,
       title: "contact information",
       description: "+254 704455096, +254 798025897",
-      action: "whatsap",
-      href: "#"
+      action: "whatsaap",
+      href: "https://wa.me/0704455096 "
     }
   ];
 
