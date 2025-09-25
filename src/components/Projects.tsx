@@ -11,7 +11,7 @@ const Projects = () => {
       tags: ["Strategy", "UX Design", "Frontend"],
       image: "./mluhtech.jpg",
       links: {
-        demo: "m-luh.xyz",
+        demo: "https://m-luh.xyz",
         github: "https://github.com/markluh/mluhtech-showcase-hub"
       }
     },
@@ -22,7 +22,7 @@ const Projects = () => {
       tags: ["online meetings", "Design System", "incomplete"],
       image: "bg-gradient-to-br from-accent/20 to-primary-glow/30",
       links: {
-        demo: "meet.m-luh.xyz",
+        demo: "https://meet.m-luh.xyz",
         github: "https://github.com/markluh/meet-your-next/"
       }
     },
